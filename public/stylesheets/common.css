@@ -1,5 +1,6 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 15px sans-serif;
+  font-weight: 1000;
   background: url('./../assets/bg.jpg') center center no-repeat fixed;
   height: 100vh;
   width: 100vw;
@@ -7,6 +8,28 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.dogs-container {
+  /* margin: 10px 0; */
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 20px;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.dogs-container .dog {
+  flex: 1 0 20%;
+  margin: 5px 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.cover {
+  padding: 20px;
+  object-fit: cover;
 }
 
 .nav-container {
@@ -45,4 +68,40 @@ body {
 
 .back-btn:active {
   background: #d86bbe;
+}
+
+/*NEW STUFF*/
+.bg-tinder {
+  background-color: #fefefe;
+}
+
+.tindtext-dark {
+  color: #474747;
+}
+
+.tindtext-light {
+  color: #bdc2cd;
+}
+
+.tindtext-link {
+  color: #474747;
+}
+
+.tindtext-link:hover {
+  color:#bdc2cd;
+}
+
+.sticky {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularjsNodejsTutorial">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Barkr | Breed Guesser</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="javascripts/app.js" type="text/javascript"></script>
+    <link href="/stylesheets/common.css" rel="stylesheet">
+  </head>
+
+  <body ng-controller="guesserController">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-tinder">
+      <span class="navbar-brand">Barkr<span class="badge badge-secondary" style="font-size: 0.5em; vertical-align: top;">Beta</span></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tinder">Tinder</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav item nav-link active" href="/guesser">Breed Guesser</a>
+          </li>
+        </ul>
+        <div class="nav-item">
+          <span class="navbox-text">Adopting from:&nbsp;</span>
+        </div>
+        <div class="nav-item">
+          <select class="custom-select">
+            <option selected>Austin Animal Center</option>
+            <option value="1" disabled>NYC ASPCA Adoption Center (coming soon)</option>
+            <option value="2" disabled>Philly Animal Welfare Society (coming soon)</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+    <br>
+
+    <!-- INPUT -->
+    <div class="container bg-tinder rounded-top" style="padding-top: 2rem; padding-bottom: 20px;">
+      <div class="row">
+        <div class="col">
+          <h2 class=tindtext-dark>Breed Guesser</h2>
+          <p>Tell us about your dog and we will guess what breed you have.</p>
+          <div class="years-container">
+            <div class="dropdown-container">
+              <p>Color: <select class="dropdown" id="colorDropdown" ng-model="selectedColor" ng-options="b.color for b in breeds"></select></p>
+              <p>Weight (lbs): <select class="dropdown" id="weightDropdown" ng-model="selectedWeight" ng-options="n for n in weights"></select></p>
+              <p>Height (ins): <select class="dropdown" id="heightDropdown" ng-model="selectedHeight" ng-options="n for n in heights"></select></p>
+              <button class="submit-btn" id="dogSubmitBtn" ng-click="submit()">Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <img class="float-right rounded" src="https://seas.upenn.edu/~hosa/cis550/tinder-dog.png" width="250" height="250" alt="">
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- RESULTS -->
+    <div class="container bg-tinder rounded-bottom">
+      <div class="movies-container">
+        <div class="movie">
+          <br>
+          <h6 class="tindtext-dark">We think your dog is one of the following breed(s):</h6>
+        </div>
+        <div class="movie" id="results" ng-repeat="movie in dog">
+          {{movie.breed}}
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <!-- Footer -->
+    <div class="sticky bg-tinder tindtext-dark">Made with 乁[ ◕ ᴥ ◕ ]ㄏ by Sam Holland, Sophie Trotto, Lucas Weiner</div>
+
+
+    <!-- Include these before the end of body tag in every HTML file -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+
+</html>

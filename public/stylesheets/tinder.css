@@ -1,0 +1,24 @@
+.dogs-container {
+  /* margin: 10px 0; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.dogs-container .dog {
+  flex: 1 0 20%;
+  margin: 5px 0;
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.dog .title, .dog .header-lg {
+  flex: 1 0 50%;
+}
+
+
+.breed {
+  text-align: center;
+}
