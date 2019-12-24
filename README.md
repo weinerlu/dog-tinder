@@ -1,3 +1,5 @@
+# README
+
 Welcome to Barkr! This is my local copy of a group project with myself (Lucas Weiner), Sam Holland, and Sophie Trotto.
 
 This app is the best way to find a dog to adopt, with a tinder-style swiping mechanic.
